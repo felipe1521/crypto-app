@@ -9,12 +9,14 @@
     border-collapse: collapse;
     margin-inline: auto;
     margin-block: 20px;
+    display: grid;
+    gap: 6px;
 }
 
 .table_header,
 .table_body {
     display: grid;
-    grid-template-columns: minmax(50px, auto) repeat(7, 1fr);
+    grid-template-columns: auto minmax(50px, auto) repeat(7, 1fr);
 }
 
 .table_header {
@@ -24,14 +26,26 @@
 .table_header th {
     font-size: 1.1rem;
     text-align: start;
-    padding: 10px 0;
+    padding: 10px;
+}
+
+tbody {
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.15);
+} 
+
+.table_body {
+    display: grid;
+    border-bottom: 2px solid var(--background-color);
+    margin: 10px;
+    gap: 15px;
 }
 
 .table_body td {
     font-size: 1rem;
-    padding: 6px;
     display: flex;
     align-items: center;
+    padding-block: 6px;
 }
 
 .table_body_perc_indicator {

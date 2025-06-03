@@ -1,7 +1,8 @@
-<h1 class="title">Cryptocoin list</h1>
+<h1 class="title">Cryptocurrencies</h1>
 <table class="table">
   <thead>
     <tr class="table_header">
+      <th>#</th>
       <th></th>
       <th>Name</th>
       <th>Symbol</th>
@@ -13,7 +14,8 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let crypto of cryptos" class="table_body">
+    <tr *ngFor="let crypto of cryptos; index as i" class="table_body">
+      <td>{{i+1}}</td>
       <td>
         <img [src]="crypto.image" alt="{{ crypto.name }}" width="40" />
       </td>
