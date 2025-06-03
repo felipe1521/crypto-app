@@ -1,0 +1,33 @@
+<h1 class="title">Cryptocoin list</h1>
+<table class="table">
+  <thead>
+    <tr class="table_header">
+      <th></th>
+      <th>Name</th>
+      <th>Symbol</th>
+      <th>Price (CLP)</th>
+      <th>ATH</th>
+      <th>ATH Date</th>
+      <th>ATL</th>
+      <th>ATL Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let crypto of cryptos" class="table_body">
+      <td>
+        <img [src]="crypto.image" alt="{{ crypto.name }}" width="40" />
+      </td>
+      <td>{{crypto.name}} 
+        <p class="table_body_perc_indicator" [style.color]="crypto.price_change_percentage_24h > 0 ? 'green' : 'red'">
+          {{convertToPercentage(crypto.price_change_percentage_24h)}}
+        </p>
+      </td>
+      <td>{{crypto.symbol.toLocaleUpperCase()}}</td>
+      <td>{{convertToCurrency(crypto.current_price)}}</td>
+      <td>{{convertToCurrency(crypto.ath)}}</td>
+      <td>{{convertToDate(crypto.ath_date)}}</td>
+      <td>{{convertToCurrency(crypto.atl)}}</td>
+      <td>{{convertToDate(crypto.atl_date)}}</td>
+    </tr>
+  </tbody>
+</table>

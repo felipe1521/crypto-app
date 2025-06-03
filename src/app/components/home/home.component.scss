@@ -1,0 +1,46 @@
+.title {
+    font-size: 2rem;
+    text-align: center;
+    padding-block: 10px;
+}
+
+.table {
+    width: 85%;
+    border-collapse: collapse;
+    margin-inline: auto;
+    margin-block: 20px;
+}
+
+.table_header,
+.table_body {
+    display: grid;
+    grid-template-columns: minmax(50px, auto) repeat(7, 1fr);
+}
+
+.table_header {
+    border-bottom: 2px solid var(--text-color);
+}
+
+.table_header th {
+    font-size: 1.1rem;
+    text-align: start;
+    padding: 10px 0;
+}
+
+.table_body td {
+    font-size: 1rem;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+}
+
+.table_body_perc_indicator {
+    font-weight: 700;
+    margin-inline: 10px;
+}
+
+@media (max-width: 991px) {
+    .table {
+        width: 100%;
+    }
+}
